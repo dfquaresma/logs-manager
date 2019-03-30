@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <div style="text-align:center">
+        <h1 class="display-3">Create New Log</h1>
+        <p class="lead">That's the place where you create your logs.</p>
+        <hr class="m-y-md">
+    </div>
+</div>
+
+<div *ngIf="log" style="text-align:center">
+    <h2> Id: {{ log.id }} </h2>
+    <p> contexto: {{ log.contexto}} </p>
+    <p>Mensagem: {{ log.mensagem }}</p>
+        
+    <button type="button" (click)="delete(log)" class="btn btn-primary">Delete</button>
+    <button type="button" (click)="update(log)" class="btn btn-primary">Edit</button>
+        
+</div>
+    

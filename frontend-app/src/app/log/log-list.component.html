@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div style="text-align:center">
+      <h1 class="display-3">All logs by order of register!</h1>
+      <h3 class="lead">Choose wisely what do with they!!!</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="ui four stackable cards">
+  <div class="card" *ngFor="let log of logs">
+    <a (click)="goToShow(log)">
+      <div class="card-block">
+        <h3 class="card-log">
+          {{ log.contexto }}
+        </h3>
+        <p>
+          <small>Data: {{log.data | date:'medium'}}</small>
+        </p>
+        <p class="card-text">{{log.mensagem}}</p>
+        <a class="btn btn-primary">View Log</a>
+      </div>
+    </a>
+  </div>
+  
+</div>

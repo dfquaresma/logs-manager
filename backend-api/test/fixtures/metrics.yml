@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  media_msg: 1.5
+  maior_numb: 1
+  menor_numb: 1
+
+two:
+  media_msg: 1.5
+  maior_numb: 1
+  menor_numb: 1

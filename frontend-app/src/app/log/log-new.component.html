@@ -1,0 +1,80 @@
+<div class="jumbotron">
+    <div style="text-align:center">
+        <h1 class="display-3">Create New Log</h1>
+        <p class="lead">That's the place where you create your logs.</p>
+        <hr class="m-y-md">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <form (ngSubmit)="createLog(log); postForm.reset()" #postForm='ngForm'>
+
+            <div class="form-group">
+                <label for="contexto">
+                    <h3> Contexto</h3>
+                </label>
+                <input type="text" class="form-control" id="contexto"
+                required
+                name="contexto"
+                placeholder="contexto do log"
+                #contexto='ngModel'
+                [(ngModel)]='log.contexto'
+                >
+                <div [hidden]='contexto.valid || contexto.pristine' 
+                    class="alert alert-danger">
+                    Contexto do log é necessário
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="tipo">
+                    <h3> Tipo </h3>
+                </label>
+                <input type="number" class="form-control" id="tipo"
+                required
+                name="tipo"
+                placeholder="tipo do log"
+                #tipo='ngModel'
+                [(ngModel)]='log.tipo'
+                >
+                <div [hidden]='tipo.valid || tipo.pristine' 
+                    class="alert alert-danger">
+                    O tipo do log é necessário
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">
+                    <h3>Mensagem</h3>
+                </label>
+                <textarea class="form-control" id="mensagem"
+                required
+                name="mensagem"
+                placeholder="mensagem de log"
+                #mensagem='ngModel'
+                [(ngModel)]='log.mensagem'
+                rows="3">
+                </textarea>
+                <div [hidden]='mensagem.valid || mensagem.pristine' 
+                    class="alert alert-danger">
+                    Mensagem é necessário.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" 
+            [disabled]="!postForm.form.valid" [hidden]="submitted"> 
+            Post Arcticle </button>
+
+
+            
+
+            <!--Stay hidden submitted -->
+            <div [hidden]="!submitted" class="alert alert-success" 
+                role="alert"> Your post has been successfully created.
+                <a class="alert-link" routerLink="/logs">View all Logs</a>
+            </div>
+
+        </form>
+    </div>
+</div>
